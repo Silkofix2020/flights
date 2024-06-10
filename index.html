@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flight Booking</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <div class="booking-widget">
+      <div class="tabs">
+        <h1 class="tab active">Buy Tickets</h1>
+      </div>
+      <div id="buy-tickets" class="tab-content active">
+        <form class="booking-form">
+          <div class="trip-type">
+            <label>
+              <input
+                type="radio"
+                name="trip"
+                value="one-way"
+                checked
+                onchange="toggleTripType()"
+              />
+              One way
+            </label>
+            <label>
+              <input
+                type="radio"
+                name="trip"
+                value="round-trip"
+                onchange="toggleTripType()"
+              />
+              Round trip
+            </label>
+
+          </div>
+          <div class="form-field">
+            <div class="form-group">
+              <label for="from">From</label>
+              <input type="text" placeholder="Select Departure..." id="from">
+
+            </div>
+            <div class="form-group">
+              <label for="to">To</label>
+              <input type="text" placeholder="Select Destination..." id="to">
+
+            </div>
+            <div class="form-group">
+              <label for="departure-date">Departure date</label>
+              <input type="date" id="departure-date" placeholder="dd/mm/yy" />
+            </div>
+            <div class="form-group round-trip-only">
+              <label for="return-date">Return date</label>
+              <input type="date" id="return-date" placeholder="dd/mm/yy" />
+            </div>
+            
+            <div class="form-group">
+                <label for="passengers">Passengers</label>
+                <div class="passenger-dropdown">
+                    <button type="button" class="passenger-select" onclick="togglePassengerDropdown()">2 adult</button>
+                    <div class="passenger-options">
+                        <div class="passenger-option">
+                            <span>Adult</span>
+                            <div class="passenger-counter">
+                                <button type="button" onclick="updatePassengerCount('adult', -1)">-</button>
+                                <span id="adult-count">2</span>
+                                <button type="button" onclick="updatePassengerCount('adult', 1)">+</button>
+                            </div>
+                        </div>
+                        <div class="passenger-option">
+                            <span>Child (2 - 16 years)</span>
+                            <div class="passenger-counter">
+                                <button type="button" onclick="updatePassengerCount('child', -1)">-</button>
+                                <span id="child-count">0</span>
+                                <button type="button" onclick="updatePassengerCount('child', 1)">+</button>
+                            </div>
+                        </div>
+                        <div class="passenger-option">
+                            <span>Infant</span>
+                            <div class="passenger-counter">
+                                <button type="button" onclick="updatePassengerCount('infant', -1)">-</button>
+                                <span id="infant-count">0</span>
+                                <button type="button" onclick="updatePassengerCount('infant', 1)">+</button>
+                            </div>
+                        </div>
+                        <button type="button" class="done-button" onclick="closePassengerDropdown()">Done</button>
+                    </div>
+            </div>
+          </div>
+          <button type="submit" class="book-button">Book now!</button>
+        </form>
+      </div>
+    </div>
+    <script>qweqwe</script>
+    <script src="script.js"></script>
+  </body>
+</html>
